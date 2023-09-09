@@ -22,8 +22,6 @@ osx_image:
 
 before_install:
   - |
-    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
-      curl -LO https://www.python.org/ftp/python/3.8.12/python-3.8.12-macosx10.9.pkg
-      sudo installer -pkg python-3.8.12-macosx10.9.pkg -target /
-      export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
-    fi
+    curl -LO https://www.python.org/ftp/python/3.9.9/python-3.9.9-macosx10.9.pkg
+    sudo installer -pkg python-3.9.9-macosx10.9.pkg -target /
+    export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
