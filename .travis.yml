@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.9"
+  - "3.6"
 # command to install dependencies
 install:
   - pip install pygame==2.5.1
