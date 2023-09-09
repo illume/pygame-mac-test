@@ -11,4 +11,5 @@ env:
   - SDL_AUDIODRIVER=disk
   - SDL_VIDEODRIVER=dummy
 os: osx
+# high 10.13
 osx_image: xcode9.4
