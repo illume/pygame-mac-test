@@ -1,6 +1,6 @@
 language: python
 python:
-  - "3.10"
+  - "3.9"
 # command to install dependencies
 install:
   - pip install pygame==2.5.1
@@ -8,4 +8,10 @@ install:
 script:
   - SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=disk python -m pygame.tests
 os: osx
-osx_image: xcode9.4
+
+# https://docs.travis-ci.com/user/reference/osx
+# 10.13, 10.12, 10.11
+osx_image: 
+  - xcode10.1
+  - xcode9.2
+  - xcode8
