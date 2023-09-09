@@ -1,10 +1,5 @@
-# language: python
-# python:
-#   - "3.6"
-# command to install dependencies
 install:
   - pip3 install pygame==2.5.1
-# command to run tests
 script:
   - SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=disk python3 -m pygame.tests
 os: osx
@@ -12,13 +7,9 @@ os: osx
 # https://docs.travis-ci.com/user/reference/osx
 # 10.13, 10.12, 10.11
 osx_image: 
-  # - xcode10.1
-  # - xcode9.2
+  - xcode10.1
+  - xcode9.2
   - xcode8
-
-# before_install:
-#   - brew update
-#   - brew install python@3.8
 
 before_install:
   - |
