@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.10"
+# command to install dependencies
+install:
+  - pip install pygame==2.5.1
+# command to run tests
+script:
+  - python -m pygame.tests
+env:
+  - SDL_AUDIODRIVER=disk
+  - SDL_VIDEODRIVER=dummy
+os: osx
+osx_image: xcode9.4
