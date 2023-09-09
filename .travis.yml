@@ -16,6 +16,14 @@ osx_image:
   # - xcode9.2
   - xcode8
 
+# before_install:
+#   - brew update
+#   - brew install python@3.8
+
 before_install:
-  - brew update
-  - brew install python@3.8
+  - |
+    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      curl -LO https://www.python.org/ftp/python/3.8.12/python-3.8.12-macosx10.9.pkg
+      sudo installer -pkg python-3.8.12-macosx10.9.pkg -target /
+      export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+    fi
