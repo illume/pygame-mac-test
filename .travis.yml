@@ -1,11 +1,18 @@
-language: python
-python:
-  - "3.10"
-# command to install dependencies
 install:
-  - pip install pygame==2.5.1
-# command to run tests
+  - pip3 install pygame==2.5.1
 script:
-  - SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=disk python -m pygame.tests
+  - SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=disk python3 -m pygame.tests
 os: osx
-osx_image: xcode9.4
+
+# https://docs.travis-ci.com/user/reference/osx
+# 10.13, 10.12, 10.11
+osx_image: 
+  - xcode10.1
+  - xcode9.2
+  - xcode8
+
+before_install:
+  - |
+    curl -LO https://www.python.org/ftp/python/3.9.9/python-3.9.9-macosx10.9.pkg
+    sudo installer -pkg python-3.9.9-macosx10.9.pkg -target /
+    export PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
